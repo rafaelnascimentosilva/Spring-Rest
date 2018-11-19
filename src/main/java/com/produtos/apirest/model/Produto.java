@@ -11,13 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_PRODUTO")
-public class Produtos implements Serializable {
+public class Produto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
+	private String nome;
 
 	private BigDecimal quantidade;
 
@@ -29,6 +31,14 @@ public class Produtos implements Serializable {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public BigDecimal getQuantidade() {
@@ -45,6 +55,6 @@ public class Produtos implements Serializable {
 
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
-	}	
+	}
 
 }
